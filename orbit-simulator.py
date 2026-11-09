@@ -13,12 +13,22 @@ G = 6.674*(10**(-11)) # Gravitationskonstante
 #Startwerte setzen
 
 
-r = R + 400000
+hoehe_km = float(input("Höhe über der Erde in km: "))
+r = R + hoehe_km * 1000
 
 x = r #am Anfang
 y = 0 #am Anfang
 vx = 0 #beim Start
 vy = math.sqrt(G*M/r)
+
+
+
+dt = 0.1 #Zeitschritt in Sekunden
+T = 2*math.pi * r /vy
+schritte = int(T/dt)
+
+print("Umlaufzeit in Minuten:", T/60)
+
 print("r am Anfang", r)
 # Beuschleunigung:
 # m*a = G*M*m/r**2
@@ -32,14 +42,14 @@ print("r am Anfang", r)
 # ax = -G*M*x/(r**3)
 # ay = -G*M*y/(r**3)
 
-dt = 0.1 #Zeitschritt in Sekunden
+
 # alle x-Orte
 xs = []
 # alle y-Orte
 ys = []
 
 
-for i in range (60000): 
+for i in range (schritte): 
     # r**2 = x**2 + y**2, Abstand zum Erdmittelpunkt
     # r = sqrt(x**2 + y**2)
     r = math.sqrt(x**2+y**2)
@@ -58,22 +68,23 @@ for i in range (60000):
     ys.append(y)
     
     
-plt.plot(xs, ys)
+plt.plot(xs, ys, color="red")
 plt.axis("equal")
 
 #Erde zeigen
-erde = plt.Circle((0, 0), R, color="green")
+erde = plt.Circle((0, 0), R, color="lightblue")
 plt.gca().add_patch(erde)
 
 
-plt.title(f"Orbit in 400 km Höhe")
+plt.title(f"Orbit in {hoehe_km} km Höhe")
 plt.xlabel("x in m")
 plt.ylabel("y in m")
 
-plt.text(0, 0, "Erde", ha="center", va="center", color="white")
+plt.text(0, 0, "Erde", ha="center", va="center", color="black")
 
 print("r am Ende", r)
 
 plt.show()
     
+
 
