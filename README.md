@@ -52,7 +52,7 @@ Die Beschleunigung zeigt zum Erdmittelpunkt, deshalb bekommt sie ein Minus.
 Die Schwerkraft zeigt immer zur Erde. Weil der Computer nur in x- und y-Richtung
 rechnet, brauche ich den Abstand r aus x und y. Das ist der Satz des Pythagoras:
 
-![Satz des Pythagoras](pythagoras.jpeg)
+![Satz des Pythagoras](pythagoras(2).jpeg)
 
 ```math
 r^2 = x^2 + y^2 \quad \Rightarrow \quad r = \sqrt{x^2 + y^2}
@@ -62,7 +62,7 @@ r^2 = x^2 + y^2 \quad \Rightarrow \quad r = \sqrt{x^2 + y^2}
 
 Mit demselben Dreieck zerlege ich die Beschleunigung in zwei Teile:
 
-![Zerlegung mit cos und sin](cos,sin.jpeg)
+![Zerlegung mit cos und sin](cos,sin(2).jpeg)
 
 ```math
 \cos(\alpha) = \frac{x}{r} \qquad \sin(\alpha) = \frac{y}{r}
